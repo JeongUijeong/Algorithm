@@ -8,7 +8,6 @@ public class Main {
     static StringBuilder sb = new StringBuilder();
     static int N, M; // 행, 열
     static int[] selected; // 선택한 M개의 원소를 담을 배열
-    static int[] used; // 0, 1로 원소 사용 여부를 체크하는 배열
 
     static void input() {
         Scanner scan = new Scanner(System.in);
@@ -31,15 +30,19 @@ public class Main {
             // 1~N까지를 k번 원소로 한 번씩 정하고,
             // 매번 k+1번부터 M번 원소로 재귀호출한다.
             for (int cand = 1; cand <= N; cand++) {
-                if (used[cand] == 1) {
-                    continue;
+                boolean isUsed = false; // 사용 여부 체크
+                for (int i = 1; i < k; i++) {
+                    if (cand == selected[i]) {
+                        isUsed = true;
+                    }
                 }
-                // k 번째에 cand 가 올 수 있을 때만
-                selected[k] = cand;
-                used[cand] = 1; // 사용한 원소 체크
-                recFunc(k + 1);
-                selected[k] = 0;
-                used[cand] = 0; // 사용한 원소 체크 초기화
+                // k 번째에 cand가 올 수 있을 때만
+                // 사용된 적 없는 cand일 때만
+                if (!isUsed) {
+                    selected[k] = cand;
+                    recFunc(k + 1);
+                    selected[k] = 0;
+                }
             }
         }
     }
