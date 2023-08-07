@@ -1,4 +1,4 @@
-package algorithm.bruteforce.Q01;
+package algorithm.bruteforce.boj15651;
 
 import java.util.Scanner;
 
