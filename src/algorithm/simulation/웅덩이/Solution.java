@@ -4,8 +4,8 @@ class Solution {
 
     public int solution(int[][] nums) {
         // 방향 배열
-        int[] dr = {-1, 0, 1, 0}; // 8방향: {-1,-1,0,1,1,1,0,-1}
-        int[] dc = {0, 1, 0, -1}; // 8방향: {0,1,1,1,0,-1,-1,-1}
+        int[] dr = {-1, 0, 1, 0};
+        int[] dc = {0, 1, 0, -1};
         int answer = 0;
         int n = nums.length;
         for (int r = 0; r < n; r++) {
