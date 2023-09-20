@@ -1,8 +1,8 @@
-package algorithm.bruteforce.boj15651;
+package algorithm.bruteforce.N과M4;
 
 import java.util.Scanner;
 
-// 문제 링크 : https://www.acmicpc.net/problem/15651
+// 문제 링크 : https://www.acmicpc.net/problem/15652
 public class Main {
 
     static StringBuilder sb = new StringBuilder();
@@ -27,9 +27,14 @@ public class Main {
             }
             sb.append('\n');
         } else { // 아직 M개를 고르지 않았다면,
-            // 1~N 까지를 k번 원소로 한 번씩 정하고,
+            // 비내림차순을 만족하기 위해 start변수 사용
+            int start = selected[k - 1];
+            if (start == 0) {
+                start = 1;
+            }
+            // start~N 까지를 k번 원소로 한 번씩 정하고,
             // 매번 k+1번부터 M번 원소로 재귀호출한다.
-            for (int cand = 1; cand <= N; cand++) {
+            for (int cand = start; cand <= N; cand++) {
                 selected[k] = cand;
                 recFunc(k + 1);
                 selected[k] = 0;

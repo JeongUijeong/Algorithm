@@ -1,4 +1,4 @@
-package algorithm.bruteforce.boj14888;
+package algorithm.bruteforce.연산자끼워넣기;
 
 import java.util.Scanner;
 

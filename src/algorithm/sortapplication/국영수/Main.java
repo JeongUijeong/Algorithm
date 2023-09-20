@@ -1,4 +1,4 @@
-package algorithm.sortapplication.boj10825;
+package algorithm.sortapplication.국영수;
 
 import java.util.Arrays;
 import java.util.Scanner;

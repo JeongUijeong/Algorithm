@@ -1,4 +1,4 @@
-package algorithm.sortapplication.boj11652;
+package algorithm.sortapplication.카드;
 
 import java.util.Arrays;
 import java.util.Scanner;

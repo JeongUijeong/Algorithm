@@ -1,4 +1,4 @@
-package algorithm.sortapplication.boj15970;
+package algorithm.sortapplication.화살표그리기;
 
 import java.util.ArrayList;
 import java.util.Collections;

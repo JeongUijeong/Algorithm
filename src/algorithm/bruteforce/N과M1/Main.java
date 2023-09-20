@@ -1,13 +1,13 @@
-package algorithm.bruteforce.boj15650;
+package algorithm.bruteforce.N과M1;
 
 import java.util.Scanner;
 
-// 문제 링크 : https://www.acmicpc.net/problem/15650
+// 문제 링크 : https://www.acmicpc.net/problem/15649
 public class Main {
 
     static StringBuilder sb = new StringBuilder();
     static int N, M; // 행, 열
-    static int[] selected; // // 선택한 M개의 원소를 담을 배열
+    static int[] selected; // 선택한 M개의 원소를 담을 배열
 
     static void input() {
         Scanner scan = new Scanner(System.in);
@@ -27,12 +27,22 @@ public class Main {
             }
             sb.append('\n');
         } else { // 아직 M개를 고르지 않았다면,
-            // (이전에 쓰였던 숫자+1)~N 까지를 k 번 원소로 한 번씩 정하고,
-            // 매번 k+1 번부터 M 번 원소로 재귀호출 해주기
-            for (int cand = selected[k - 1] + 1; cand <= N; cand++) {
-                selected[k] = cand;
-                recFunc(k + 1);
-                selected[k] = 0;
+            // 1~N까지를 k번 원소로 한 번씩 정하고,
+            // 매번 k+1번부터 M번 원소로 재귀호출한다.
+            for (int cand = 1; cand <= N; cand++) {
+                boolean isUsed = false; // 사용 여부 체크
+                for (int i = 1; i < k; i++) {
+                    if (cand == selected[i]) {
+                        isUsed = true;
+                    }
+                }
+                // k 번째에 cand가 올 수 있을 때만
+                // 사용된 적 없는 cand일 때만
+                if (!isUsed) {
+                    selected[k] = cand;
+                    recFunc(k + 1);
+                    selected[k] = 0;
+                }
             }
         }
     }

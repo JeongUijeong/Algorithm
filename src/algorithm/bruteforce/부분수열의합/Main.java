@@ -1,4 +1,4 @@
-package algorithm.bruteforce.boj1182;
+package algorithm.bruteforce.부분수열의합;
 
 import java.util.Scanner;
 

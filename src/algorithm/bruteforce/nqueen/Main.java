@@ -1,4 +1,4 @@
-package algorithm.bruteforce.boj9663;
+package algorithm.bruteforce.nqueen;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package algorithm.sortapplication.boj1015;
+package algorithm.sortapplication.수열정렬;
 
 import java.util.Arrays;
 import java.util.Scanner;
